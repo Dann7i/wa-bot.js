@@ -1,0 +1,33 @@
+{
+  "name": "goku-md",
+  "version": "1.0.0",
+  "description": "Bot WhatsApp multi-device berbasis Node.js menggunakan library lily-baileys. Dibuat oleh Wildan Hermawan.",
+  "main": "./assets/main.js",
+  "scripts": {
+    "start": "node ./assets/main.js",
+    "dan": "nodemon ./assets/main.js"
+  },
+  "keywords": [
+    "whatsapp-bot",
+    "lily-baileys",
+    "multi-device",
+    "nodejs",
+    "wildan-bot",
+    "goku-md"
+  ],
+  "author": "Wildan Hermawan",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dann7i/wa-bot.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dann7i/wa-bot.js/issues"
+  },
+  "homepage": "https://github.com/Dann7i/wa-bot.js#readme",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "lily-baileys": "^1.2.7",
+    "qrcode-terminal": "^0.12.0"
+  }
+}
