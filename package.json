@@ -2,15 +2,15 @@
   "name": "goku-md",
   "version": "1.0.0",
   "type": "module",
-  "description": "Bot WhatsApp multi-device berbasis Node.js menggunakan library lily-baileys. Dibuat oleh Wildan Hermawan.",
-  "main": "./assets/main.js",
+  "description": "Bot WhatsApp multi-device berbasis Node.js menggunakan library @whiskeysockets/baileys. Dibuat oleh Wildan Hermawan.",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./assets/main.js",
-    "dan": "nodemon ./assets/main.js"
+    "start": "node index.js",
+    "dan": "nodemon index.js"
   },
   "keywords": [
     "whatsapp-bot",
-    "lily-baileys",
+    "baileys",
     "multi-device",
     "nodejs",
     "wildan-bot",
@@ -18,20 +18,14 @@
   ],
   "author": "Wildan Hermawan",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Dann7i/wa-bot.js.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Dann7i/wa-bot.js/issues"
-  },
-  "homepage": "https://github.com/Dann7i/wa-bot.js#readme",
   "dependencies": {
     "@hapi/boom": "^10.0.1",
     "@whiskeysockets/baileys": "^6.7.18",
     "axios": "^1.11.0",
-    "lily-baileys": "^1.2.7",
+    "chalk": "^5.4.1",
+    "lowdb": "^7.0.1",
     "pino": "^9.8.0",
-    "qrcode-terminal": "^0.12.0"
+    "qrcode-terminal": "^0.12.0",
+    "nodemon": "^3.1.10"
   }
 }

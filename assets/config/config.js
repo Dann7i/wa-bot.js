@@ -26,16 +26,6 @@ global.dan = {
     ai: "🤖",
     wave: "👋",
   },
-  newsletterJid: "",
-  setting: JSON.parse(fs.readFileSync("./storage/setting.json", "utf-8")),
-  saveSetting: function () {
-    fs.writeFileSync("./storage/setting.json", JSON.stringify(global.dan.setting, null, 2));
-    return global.dan.setting;
-  },
-  saveSettingAsync: async function () {
-    await fs.promises.writeFile("./storage/setting.json", JSON.stringify(global.dan.setting, null, 2));
-    return global.dan.setting;
-  },
 };
 
 global.owner = {
