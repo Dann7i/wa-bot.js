@@ -23,9 +23,11 @@
     "@whiskeysockets/baileys": "^6.7.18",
     "axios": "^1.11.0",
     "chalk": "^5.4.1",
+    "dayjs": "^1.11.13",
     "lowdb": "^7.0.1",
+    "nodemon": "^3.1.10",
     "pino": "^9.8.0",
     "qrcode-terminal": "^0.12.0",
-    "nodemon": "^3.1.10"
+    "ruhend-scraper": "^9.0.8"
   }
 }
