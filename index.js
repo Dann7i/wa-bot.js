@@ -32,7 +32,7 @@ let restartTimeout;
 fs.watch(watchPath, { recursive: true }, (eventType, filename) => {
   if (!filename) return;
 
-  if (filename.startsWith("sesibot/") || filename.startsWith("media/")) {
+  if (filename.includes("sesibot") || filename.includes("media")) {
     return;
   }
 
