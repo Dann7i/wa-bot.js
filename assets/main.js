@@ -17,7 +17,7 @@ async function koneksibot() {
 
     const gokubot = makeWASocket({
       auth: state,
-      printQRInTerminal: false, // QR manual via qrcode-terminal
+      printQRInTerminal: false,
       logger: pino({ level: "silent" }).child({ level: "silent" }),
       syncFullHistory: true,
       keepAliveIntervalMs: 30000,
@@ -26,11 +26,11 @@ async function koneksibot() {
 
     // Pairing / QR Mode
     if (!gokubot.authState.creds.registered) {
-      const jawab = await p("Mau terhubung via pairing code? [y/n]: ");
+      const jawab = await p("Mau terhubung via pairing code? [y/n] ");
 
       if (jawab.toLowerCase() === "y") {
         console.log("Memulai koneksi dengan pairing code...");
-        const nt = await p("Masukkan nomor WA-mu diawali +62: ");
+        const nt = await p("Masukkan nomor WA-mu DIAWALI +62 ");
         await new Promise((r) => setTimeout(r, 2000)); // tunggu session siap
         const cp = await gokubot.requestPairingCode(nt.replace(/\D/g, ""));
         console.log("Gunakan pairing code ini di perangkatmu:");
@@ -49,7 +49,7 @@ async function koneksibot() {
 
       if (connection === "open") {
         console.log("Koneksi berhasil terhubung");
-        console.log("Bot terhubung dengan user:", gokubot.user);
+        console.log("Bot terhubung dengan user", gokubot.user);
       }
 
       if (connection === "close") {
@@ -57,11 +57,18 @@ async function koneksibot() {
         console.log(`Koneksi terputus alasannya: ${reason}`);
 
         if (reason === DisconnectReason.loggedOut) {
-          console.log("Sesi tidak valid, hapus folder 'assets/sesibot' lalu jalankan ulang...");
-          await fs.promises.rm("assets/sesibot", { recursive: true, force: true });
+          console.log(
+            "Sesi tidak valid, hapus folder 'assets/sesibot' lalu jalankan ulang...",
+          );
+          await fs.promises.rm("assets/sesibot", {
+            recursive: true,
+            force: true,
+          });
           process.exit(1);
         } else if (reason === DisconnectReason.restartRequired) {
-          console.log("Restart diperlukan, bot akan dimulai ulang oleh nodemon...");
+          console.log(
+            "Restart diperlukan, bot akan dimulai ulang oleh nodemon...",
+          );
           process.exit(1);
         }
       }

@@ -16,7 +16,11 @@ function startBot() {
   botProcess.on("exit", (code) => {
     botProcess = null;
     if (!isRestarting) {
-      console.error(chalk.red(`Proses bot berhenti dengan kode: ${code}, mencoba restart dalam 5 detik...`));
+      console.error(
+        chalk.red(
+          `Proses bot berhenti dengan kode: ${code}, mencoba restart dalam 5 detik...`,
+        ),
+      );
       setTimeout(startBot, 5000);
     }
   });
@@ -36,7 +40,9 @@ fs.watch(watchPath, { recursive: true }, (eventType, filename) => {
     return;
   }
 
-  console.log(chalk.yellow(`\nPerubahan terdeteksi di: ${filename}. Merestart bot...`));
+  console.log(
+    chalk.yellow(`\nPerubahan terdeteksi di: ${filename}. Merestart bot...`),
+  );
 
   clearTimeout(restartTimeout);
   restartTimeout = setTimeout(() => {
